@@ -3,12 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Project One</title>
+    <!-- links -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Courgette&family=Kalam:wght@300&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">  
+    <!-- Bulma -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.ico">
+    <!-- CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Title -->
+    <title>Ticket - Book your flight or hotel!</title>
   </head>
 
   <body class="has-navbar-fixed-top">
@@ -87,21 +97,24 @@
                         <input class="input is-normal" type="text" style="width: 90%;" placeholder="Returning...">
                       </div>  
                       <div class="column num-ppl">
-                        <input class="input is-normal" type="text" style="width: 50%;" placeholder="1 Person">
+                        <input class="input is-normal" type="text" style="width: 55%;" placeholder="Party Size...">
                       </div>
                     </div>
                     <div class="columns sbt-btn is-centered is-half">
-                      <button class="button is-info is-normal is-rounded">Submit</button>
+                      <button class="button is-info is-normal is-rounded">Find Flights</button>
                     </div>
                   </div> 
                 </div> 
             </section>
         </div>
      </div>
-     <section class="hero is-small is-info">
+     <section class="hero is-primary is-info">
       <div class="hero-body">
         <p class="title">
           Featured Places
+        </p>
+        <p class="subtitle">
+          Domestic Locations
         </p>
       </div>
     </section>
@@ -112,16 +125,16 @@
             <div class="tile is-parent is-vertical">
               <article class="tile is-child notification is-primary">
                 <p class="title">New York</p>
-                <p class="subtitle">Known for its diverse cultural scene, the Big Apple boasts so many things to do that it puts most of its U.S. peers to shame.</p>
+                <p class="subtitle feature-desc">Known for its diverse cultural scene, the Big Apple boasts so many things to do that it puts most of its U.S. peers to shame.</p>
                 <figure class="image is-4by3 new-york">
                   <img src="./assets/images/new_york.jpg">
                 </figure>
               </article>
             </div>
             <div class="tile is-parent">
-              <article class="tile is-child notification is-info">
+              <article class="tile is-child notification is-link">
                 <p class="title">San Francisco</p>
-                <p class="subtitle">Beautiful bay area that you can explore on foot or cable car.</p>
+                <p class="subtitle feature-desc">Beautiful bay area that you can explore on foot or cable car.</p>
                 <figure class="image is-4by3 san-f">
                   <img src="./assets/images/san_f.jpg">
                 </figure>
@@ -131,7 +144,7 @@
           <div class="tile is-parent">
             <article class="tile is-child notification is-danger">
               <p class="title">New Orleans</p>
-              <p class="subtitle">Offering a blend of influences from the Caribbean, Europe and other locales, New Orleans has a distinct personality.</p>
+              <p class="subtitle feature-desc">Offering a blend of influences from the Caribbean, Europe and other locales, New Orleans has a distinct personality.</p>
               <figure class="image is-2by1 new-orleans">
                 <img src="./assets/images/new_orleans.jpg">
               </figure>
@@ -139,10 +152,10 @@
           </div>
         </div>
         <div class="tile is-parent">
-          <article class="tile is-child notification is-success">
+          <article class="tile is-child notification is-warning">
             <div class="content">
               <p class="title">Seatle</p>
-              <p class="subtitle">Seattle may be known for its consistently soggy weather, but this city in the Pacific Northwest has plenty to offer travel buffs.</p>
+              <p class="subtitle feature-desc">Seattle may be known for its consistently soggy weather, but this city in the Pacific Northwest has plenty to offer travel buffs.</p>
               <figure class="image is-1by2 new-orleans">
                 <img src="./assets/images/seatle.jpg">
               </figure>
