@@ -47,6 +47,18 @@ body {
     margin-bottom: 10px;
 }
 
+.searchBox {
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+}
+
+#price {
+    margin-top:43px;
+}
+.align {
+    text-align: center;
+}
 .date-input {
     margin-left: 3rem;
 }
@@ -62,7 +74,9 @@ main {
 .holder {
     padding: 2rem;
 }
-
+.airlines {
+    margin: 50px;
+}
 .footer {
     background-color: rgb(210, 218, 221);
     border-top: 2px solid darkgray;
