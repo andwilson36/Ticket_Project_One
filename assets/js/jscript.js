@@ -1,25 +1,63 @@
-// varibles
+// Location ID Variable
+var topPage = document.querySelector('#top-page')
+// Button varibles
 var findFlights= document.querySelector('.flightButton');
+var bookNY = document.querySelector('.ny-text');
+var bookSF = document.querySelector('.sf-text');
+var bookNO = document.querySelector('.new-o-text');
+var bookSeatle = document.querySelector('.seatle-text');
+// Input varibles
+var departingFrom = document.querySelector(".departingFrom");
+var arrivingAt = document.querySelector(".arrivingAt");
+var departingDate= document.querySelector(".departingDate");
+var returningDate= document.querySelector(".returningDate");
+var party = document.querySelector(".party");
 
-// Event Listener
+// Find Flights Listener
 findFlights.addEventListener('click', function() {
-    console.log("true!")
-    // departingFrom form value
-    var departingFrom = document.querySelector(".departingFrom").value;
-    console.log(departingFrom)
-    // arrivingAt form value
-    var arrivingAt= document.querySelector(".arrivingAt").value;
-    console.log(arrivingAt)
+
+    // Takes value from input
+    var departFrom = departingFrom.value;
+    console.log(departFrom);
     
-    // departingDate
-    var departingDate= document.querySelector(".departingDate").value;
-    console.log(departingDate)
+    var arriveAt = AtarrivingAt.value;
+    console.log(arriveAt);
+    
+    var departDate = departingDate.value;
+    console.log(departDate);
 
-    // returningDate
-    var returningDate= document.querySelector(".returningDate").value;
-    console.log(returningDate)
+    var returnDate = returningDate.value;
+    console.log(returnDate);
 
-    // partySize 
-    var party = document.querySelector(".party").value;
-    console.log(party)
+    var partySize = party.value;
+    console.log(partySize);
 })
+
+// Book listeners
+bookNY.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    $(document).scrollTop(1);
+    arrivingAt.value = 'JFK';
+});
+
+bookSF.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    $(document).scrollTop(1);
+    arrivingAt.value = 'SFO';
+});
+
+bookNO.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    $(document).scrollTop(1);
+    arrivingAt.value = 'MSY';
+});
+
+bookSeatle.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    $(document).scrollTop(1);
+    arrivingAt.value = 'SEA';
+});
