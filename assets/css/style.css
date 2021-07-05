@@ -1,3 +1,7 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
 #navbar-logo {
     padding-top: 0px;
     height: auto;
@@ -76,4 +80,10 @@ main {
 .footer {
     background-color: rgb(210, 218, 221);
     border-top: 2px solid darkgray;
+}
+
+.feature-desc {
+    font-family: 'Architects Daughter', cursive;
+    font-family: 'Courgette', cursive;
+    font-family: 'Kalam', cursive;
 }
