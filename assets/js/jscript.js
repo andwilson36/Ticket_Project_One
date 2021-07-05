@@ -5,29 +5,21 @@ var findFlights= document.querySelector('.flightButton');
 findFlights.addEventListener('click', function() {
     console.log("true!")
     // departingFrom form value
-    var departingFrom = document.getElementsByClassName("departingFrom").value;
+    var departingFrom = document.querySelector(".departingFrom").value;
     console.log(departingFrom)
     // arrivingAt form value
-    var arrivingAt= document.getElementsByClassName("arrivingAt").value;
+    var arrivingAt= document.querySelector(".arrivingAt").value;
     console.log(arrivingAt)
     
     // departingDate
-    var departingDate= document.getElementsByClassName("departingDate").value;
+    var departingDate= document.querySelector(".departingDate").value;
     console.log(departingDate)
 
     // returningDate
-    var returningDate= document.getElementsByClassName("returningDate").value;
+    var returningDate= document.querySelector(".returningDate").value;
     console.log(returningDate)
 
     // partySize 
-    var partySize= document.getElementsByClassName("partysize").value;
-    console.log(partySize) 
+    var party = document.querySelector(".party").value;
+    console.log(party)
 })
-
-
-
-
-
-
-
-// document.getElementById("formGroupExampleInput").value;
