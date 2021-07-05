@@ -1,5 +1,3 @@
-// Location ID Variable
-var topPage = document.querySelector('#top-page')
 // Button varibles
 var findFlights= document.querySelector('.flightButton');
 var bookNY = document.querySelector('.ny-text');
