@@ -1,0 +1,65 @@
+#navbar-logo {
+    padding-top: 0px;
+    height: auto;
+    width: auto;
+    max-height: 72px;
+    max-width: 250px;
+}
+
+.beach-div {
+    position: relative;
+    background-image: url("beach.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+}
+
+.on-img {
+    background-color: rgb(152, 206, 231, .95);
+    position: absolute;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    margin-top: 20rem;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid rgb(209, 221, 238);
+    border-radius: 5px;
+}
+
+.logo-header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-header {
+    font-family: 'Ubuntu', sans-serif;
+    color: rgb(0, 0, 175);
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+.date-input {
+    margin-left: 3rem;
+}
+
+.sbt-btn {
+    margin-top: 10px;
+}
+
+main {
+    background-color: rgb(223, 232, 236);
+}
+
+.holder {
+    padding: 2rem;
+}
+
+.footer {
+    background-color: rgb(210, 218, 221);
+    border-top: 2px solid darkgray;
+}
