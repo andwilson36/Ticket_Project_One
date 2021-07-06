@@ -1,22 +1,16 @@
 // Find Flights Listener
 $('#find-btn').on('click', function(event) {
     event.preventDefault();
-
     // Takes value from input
-    var departFrom = $(".departingFrom").val();
-    console.log(departFrom);
-    
+    var departFrom = $(".departingFrom").val();  
     var arriveAt = $(".arrivingAt").val();
-    console.log(arriveAt);
-    
     var departDate = $(".departingDate").val();
-    console.log(departDate);
-
     var returnDate = $(".returningDate").val();
-    console.log(returnDate);
-
     var partySize = $(".party").val();
-    console.log(partySize);
+    var arriveAt = $(".arrivingAt").val();
+    var departDate = $(".departingDate").val();
+    var returnDate = $(".returningDate").val();
+    var partySize = $(".party").val();
 });
 
 // Book listeners
