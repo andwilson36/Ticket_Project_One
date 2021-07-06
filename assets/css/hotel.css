@@ -10,10 +10,7 @@ body {
     max-width: 250px;
 }
 
-.navbar{
-    background: rgb(58,58,232);
-    background: linear-gradient(90deg, rgba(58,58,232,1) 23%, rgba(0,212,255,1) 100%);
-}
+
 .beach-div {
     position: relative;
     background-image: url("Night.jpeg");
@@ -81,15 +78,176 @@ main {
 .airlines {
     margin: 50px;
 }
-.footer {
-    background-color: rgb(210, 218, 221);
-    border-top: 2px solid darkgray;
+
+
+.boxShadow{
+    box-shadow: 3px 3px 3px 3px gray;
+      -moz-box-shadow: 3px 3px 3px 3px gray;
+      -webkit-box-shadow: 3px 3px 3px 3px gray;
+      -khtml-box-shadow: 3px 3px 3px 3px gray;
 }
 
 .feature-desc {
-    font-family: 'Architects Daughter', cursive;
-    font-family: 'Courgette', cursive;
-    font-family: 'Kalam', cursive;
+    font-family: cursive;
+    text-decoration-color: white;
+}
+
+
+/* Los Angeles */
+.LA-tile:hover .los-angeles {
+    opacity: 0.3;
+}
+
+.LA-tile:hover .la-caption {
+    opacity: 1;
+}
+
+.los-angeles {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.la-caption {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.la-text {
+    color: white;
+    background-color: hsl(171, 100%, 41%, .5);
+    border-color: hsl(171, 100%, 41%, .5);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Houston */
+
+.hou-tile:hover .hou-t {
+    opacity: 0.3;
+}
+
+.hou-tile:hover .hou-caption {
+    opacity: 1;
+}
+
+.hou-t {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.hou-caption {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.hou-text {
+    color: white;
+    background-color: hsl(217, 71%, 53%, .5);
+    border-color: hsl(217, 71%, 53%, .5);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Miami */
+.miami-tile:hover .miami {
+    opacity: 0.3;
+}
+
+.miami-tile:hover .miami-caption {
+    opacity: 1;
+}
+
+.miami {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.miami-caption {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.miami-text {
+    color: white;
+    background-color: hsl(348, 100%, 61%, .5);
+    border-color: hsl(348, 100%, 61%, .5);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Chicago */
+.chicago-tile:hover .chicago {
+    opacity: 0.3;
+}
+
+.chicago-tile:hover .chicago-caption {
+    opacity: 1;
+}
+
+.chicago {
+    opacity: 1;
+    display: block;
+    width: 90%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.chicago-caption {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.chicago-text {
+    color: white;
+    background-color: hsl(48, 100%, 67%, .5);
+    border-color: hsl(48, 100%, 67%, .5);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1.5rem;
+    font-family: 'Raleway', sans-serif;
 }
 
 .titleHeader{
@@ -98,9 +256,18 @@ main {
 }
 
 .miamiCard{
-    background-color: #81fcd7;
+    background-color: #69d677
+}
+
+.imgRound{
+    border-radius: 8px;
 }
 
 .houstonCard{
-    background-color: darksalmon;
+    background-color: orange;
+}
+
+.footer {
+    background-color: rgb(210, 218, 221);
+    border-top: 2px solid darkgray;
 }
