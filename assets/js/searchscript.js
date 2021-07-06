@@ -78,6 +78,6 @@ function createTickets(goingDest, returningDest) {
         align4.append(mobile5);
         mobile5.append(column3);
         column3.append(arrivingAP);
-}
+}}
 
 pullData(api, returnApi);
