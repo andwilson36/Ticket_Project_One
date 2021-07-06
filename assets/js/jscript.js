@@ -4,19 +4,14 @@ $('#find-btn').on('click', function(event) {
 
     // Takes value from input
     var departFrom = $(".departingFrom").val();
-    console.log(departFrom);
     
     var arriveAt = $(".arrivingAt").val();
-    console.log(arriveAt);
     
     var departDate = $(".departingDate").val();
-    console.log(departDate);
 
     var returnDate = $(".returningDate").val();
-    console.log(returnDate);
 
     var partySize = $(".party").val();
-    console.log(partySize);
 });
 
 // Book listeners
