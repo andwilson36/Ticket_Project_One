@@ -56,6 +56,7 @@ function createTickets(goingDest, returningDest) {
     var departingAP = $('<p>').addClass('bd-notification is-info searchBox');
     var arrivingAP = $('<p>').addClass('bd-notification is-info searchBox');
     var numOfFlights = 1;
+  
     // goingDest.Carriers.length
     for(var i = 0; i < goingDest.Carriers.length; i++) {
         $('#container').append(columns);
@@ -77,10 +78,6 @@ function createTickets(goingDest, returningDest) {
         align4.append(mobile5);
         mobile5.append(column3);
         column3.append(arrivingAP);
-
-
-
-    }
 }
 
 pullData(api, returnApi);
