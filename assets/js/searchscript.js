@@ -59,7 +59,6 @@ function createTickets(goingDest, returningDest) {
         column.append(destination);
         columns.append(align2);
         align2.append(price);
-        price.append(mobile);
         columns.append(align3);
     }
 }
