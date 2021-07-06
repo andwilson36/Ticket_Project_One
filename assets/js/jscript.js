@@ -1,25 +1,49 @@
-// varibles
-var findFlights= document.querySelector('.flightButton');
+// Find Flights Listener
+$('#find-btn').on('click', function(event) {
+    event.preventDefault();
 
-// Event Listener
-findFlights.addEventListener('click', function() {
-    console.log("true!")
-    // departingFrom form value
-    var departingFrom = document.querySelector(".departingFrom").value;
-    console.log(departingFrom)
-    // arrivingAt form value
-    var arrivingAt= document.querySelector(".arrivingAt").value;
-    console.log(arrivingAt)
+    // Takes value from input
+    var departFrom = $(".departingFrom").val();
+    console.log(departFrom);
     
-    // departingDate
-    var departingDate= document.querySelector(".departingDate").value;
-    console.log(departingDate)
+    var arriveAt = $(".arrivingAt").val();
+    console.log(arriveAt);
+    
+    var departDate = $(".departingDate").val();
+    console.log(departDate);
 
-    // returningDate
-    var returningDate= document.querySelector(".returningDate").value;
-    console.log(returningDate)
+    var returnDate = $(".returningDate").val();
+    console.log(returnDate);
 
-    // partySize 
-    var party = document.querySelector(".party").value;
-    console.log(party)
-})
+    var partySize = $(".party").val();
+    console.log(partySize);
+});
+
+// Book listeners
+$('.ny-text').on('click', function(event) {
+    event.preventDefault();
+
+    $(document).scrollTop(1);
+    $(".arrivingAt").val('JFK');
+});
+
+$('.sf-text').on('click', function(event) {
+    event.preventDefault();
+
+    $(document).scrollTop(1);
+    $(".arrivingAt").val('SFO');
+});
+
+$('.new-o-text').on('click', function(event) {
+    event.preventDefault();
+
+    $(document).scrollTop(1);
+    $(".arrivingAt").val('MSY');
+});
+
+$('.seatle-text').on('click', function(event) {
+    event.preventDefault();
+
+    $(document).scrollTop(1);
+    $(".arrivingAt").val('SEA');
+});

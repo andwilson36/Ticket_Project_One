@@ -7,7 +7,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Courgette&family=Kalam:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dancing+Script&family=Maven+Pro&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">  
@@ -67,7 +67,7 @@
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="buttons">
-                <a class="button is-danger" href="covid.html">COVID-19 Information</a>
+                <a class="button is-danger covid glow-button" href="covid.html">COVID-19 Information</a>
               </div>
             </div>
           </div>
@@ -122,43 +122,55 @@
       <div class="tile is-ancestor holder has-background-grey-lighter">
         <div class="tile is-vertical is-8">
           <div class="tile">
-            <div class="tile is-parent is-vertical">
-              <article class="tile is-child notification is-link">
+            <div class="tile is-parent is-vertical LA-tile">
+              <article class="tile is-child notification is-link boxShadow">
                 <p class="title">Los Angeles</p>
                 <p class="subtitle feature-desc">Los Angeles is a trend-setting global metropolis with a fascinating history and a rich cultural heritage. LA's cultural attractions are second to none, whether it’s the Space Shuttle Endeavour, Walt Disney Concert Hall, the Getty Center or art galleries and urban art.</p>
-                <figure class="image is-4by3 new-york">
-                  <img src="./assets/images/los _angeles.jpeg">
+                <figure class="image is-4by3 los-angeles">
+                  <img src="./assets/images/los _angeles.jpeg" class="imgRound">
                 </figure>
+                <div class="la-caption">
+                    <button class="la-text is-primary"><strong>Book Now</strong></button>
+                  </div>
               </article>
             </div>
-            <div class="tile is-parent">
-              <article class="tile is-child notification houstonCard has-text-light">
+            <div class="tile is-parent hou-tile">
+              <article class="tile is-child notification houstonCard has-text-light boxShadow">
                 <p class="title">Houston</p>
                 <p class="subtitle feature-desc">Rodeos, BBQ, City Sights, and So Much More in the Lone Star State. Book Your Stay Today! Take in Legendary Local Cuisine, Live Music, and City Sights in Houston.</p>
-                <figure class="image is-4by3 san-f">
-                  <img src="./assets/images/Houston.jpeg">
+                <figure class="image is-4by3 hou-t">
+                  <img src="./assets/images/Houston.jpeg" class="imgRound">
                 </figure>
+                <div class="hou-caption">
+                    <button class="hou-text is-link"><strong>Book Now</strong></button>
+                  </div>
               </article>
             </div>
           </div>
-          <div class="tile is-parent">
-            <article class="tile is-child notification miamiCard">
+          <div class="tile is-parent miami-tile">
+            <article class="tile is-child notification miamiCard boxShadow has-text-white">
               <p class="title">Miami</p>
               <p class="subtitle feature-desc">From the museums to the streets of Little Havana, you can always find plenty of things to do. Across the bay, Miami Beach, with its Art Deco District, fantastic stretch of beachfront, and fun vibe, is a must-see in the area. Nearby, Everglades National Park is one of several popular day trip destinations from Miami.</p>
-              <figure class="image is-2by1 new-orleans">
-                <img src="./assets/images/new_orleans.jpg">
+              <figure class="image is-2by1 miami">
+                <img src="./assets/images/new_orleans.jpg" class="imgRound">
               </figure>
+              <div class="miami-caption">
+                <button class="miami-text is-danger"><strong>Book Now</strong></button>
+              </div>
             </article>
           </div>
         </div>
-        <div class="tile is-parent">
-          <article class="tile is-child notification is-danger">
+        <div class="tile is-parent chicago-tile">
+          <article class="tile is-child notification is-danger boxShadow">
             <div class="content">
               <p class="title">Chicago</p>
               <p class="subtitle feature-desc">What can't you do in Chicago? You might live for wining and dining at famed restaurants; visiting world-renowned museums; meandering along jaw-dropping waterfronts; hearing ground-breaking music; watching award-winning theatrical productions; visiting countless iconic buildings designed by some of the world’s most celebrated architects … and all within 77 vibrant; globally diverse neighborhoods that are the heart and soul of Chicago.</p>
-              <figure class="image is-1by2 new-orleans">
-                <img src="./assets/images/SearsTower.jpeg">
+              <figure class="image is-1by2 chicago">
+                <img src="./assets/images/SearsTower.jpeg" class="imgRound">
               </figure>
+              <div class="chicago-caption">
+                <button class="chicago-text is-danger"><strong>Book Now</strong></button>
+              </div>
             </div>
           </article>
         </div>
