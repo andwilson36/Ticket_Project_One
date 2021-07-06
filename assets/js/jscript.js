@@ -14,10 +14,6 @@ $('#find-btn').on('click', function(event) {
 });
 
 // Navbar listeners
-$('.fights-btn').on('click', function() {
-    window.location.assign('./index.html')
-})
-
 $('.hotels-btn').on('click', function() {
     window.location.assign('./hotel.html');
 });
