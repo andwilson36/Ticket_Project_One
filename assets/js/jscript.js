@@ -13,6 +13,15 @@ $('#find-btn').on('click', function(event) {
     var partySize = $(".party").val();
 });
 
+// Navbar listeners
+$('.fights-btn').on('click', function() {
+    window.location.assign('./index.html')
+})
+
+$('.hotels-btn').on('click', function() {
+    window.location.assign('./hotel.html');
+});
+
 // Book listeners
 $('.ny-text').on('click', function(event) {
     event.preventDefault();
