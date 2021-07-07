@@ -1,5 +1,4 @@
-
-function createTickets(goingDest, returningDest) {
+function createTickets() {
     // appends to page
     var columns = $('<div>').addClass('columns');
     var align = $('<div>').addClass('column align');
