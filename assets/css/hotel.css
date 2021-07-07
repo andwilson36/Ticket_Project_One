@@ -96,8 +96,7 @@ main {
 }
 
 .feature-desc {
-    font-family: 'Sriracha', cursive;
-    text-decoration-color: white;
+    font-size: 1.5rem;
 }
 
 
@@ -137,7 +136,7 @@ main {
     border-radius: 10px;
     padding: 10px;
     font-size: 1.5rem;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 /* Houston */
@@ -177,7 +176,7 @@ main {
     border-radius: 10px;
     padding: 10px;
     font-size: 1.5rem;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 /* Miami */
@@ -216,7 +215,7 @@ main {
     border-radius: 10px;
     padding: 10px;
     font-size: 1.5rem;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 /* Chicago */
@@ -255,7 +254,7 @@ main {
     border-radius: 10px;
     padding: 10px;
     font-size: 1.5rem;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .titleHeader{

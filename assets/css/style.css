@@ -118,8 +118,7 @@ main {
 }
 
 .feature-desc {
-    font-family: 'Sriracha', cursive;
-    text-decoration-color: white;
+    font-size: 1.5rem;
 }
 
 .ny-tile:hover .new-york {
@@ -248,9 +247,6 @@ main {
     background-color: #ffc170;
 }
 
-.seatle-text-color{
-    text-decoration-color: white;
-}
 .seatle {
     opacity: 1;
     display: block;
