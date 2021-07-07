@@ -274,10 +274,11 @@ main {
     line-height: 1.125;
 }
 
+
 .seatle-text {
     color: white;
-    background-color: hsl(48, 100%, 67%, .5);
-    border-color: hsl(48, 100%, 67%, .5);
+    background-color: rgb(255, 193, 112, .5);
+    border-color: rgb(255, 193, 112, .5);
     border-radius: 10px;
     padding: 10px;
     font-size: 1.5rem;
