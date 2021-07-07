@@ -1,3 +1,10 @@
+// gets local storage from hotel page
+function getLocalStorage() {
+    $(".departingDate").val(localStorage.getItem('departingDate'));
+    $(".returningDate").val(localStorage.getItem('returningDate'));
+    $(".party").val(localStorage.getItem('party'));
+}
+
 // Find Flights Listener
 $('#find-btn').on('click', function(event) {
     event.preventDefault();
@@ -57,3 +64,5 @@ $('.seatle-text').on('click', function(event) {
     $(document).scrollTop(1);
     $(".arrivingAt").val('SEA');
 });
+
+getLocalStorage();

@@ -5,12 +5,12 @@ function getLocalStorage() {
     $(".party").val(localStorage.getItem('party'));
 }
 
-// Find Flights Listener
+// Find Hotels Listener
 $('#find-btn').on('click', function(event) {
     event.preventDefault();
     // Takes value from input
     var arriveAt = $(".arrivingAt").val();
-    localStorage.setItem('arrivingAt', arriveAt);
+    localStorage.setItem('arrivingAtCity', arriveAt);
 
     var departDate = $(".departingDate").val();
     localStorage.setItem('departingDate', departDate);
