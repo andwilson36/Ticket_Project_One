@@ -1,17 +1,26 @@
-// Find Flights Listener
-// $('#find-btn').on('click', function(event) {
-//     event.preventDefault();
-//     // Takes value from input
-//     var departFrom = $(".departingFrom").val();  
-//     var arriveAt = $(".arrivingAt").val();
-//     var departDate = $(".departingDate").val();
-//     var returnDate = $(".returningDate").val();
-//     var partySize = $(".party").val();
-//     var arriveAt = $(".arrivingAt").val();
-//     var departDate = $(".departingDate").val();
-//     var returnDate = $(".returningDate").val();
-//     var partySize = $(".party").val();
-// });
+// get local storage info
+function getLocalStorage() {
+    $(".departingDate").val(localStorage.getItem('departingDate'));
+    $(".returningDate").val(localStorage.getItem('returningDate'));
+    $(".party").val(localStorage.getItem('party'));
+}
+
+// Find Hotels Listener
+$('#find-btn').on('click', function(event) {
+    event.preventDefault();
+    // Takes value from input
+    var arriveAt = $(".arrivingAt").val();
+    localStorage.setItem('arrivingAtCity', arriveAt);
+
+    var departDate = $(".departingDate").val();
+    localStorage.setItem('departingDate', departDate);
+
+    var returnDate = $(".returningDate").val();
+    localStorage.setItem('returningDate', returnDate);
+
+    var partySize = $(".party").val();
+    localStorage.setItem('party', partySize);
+});
 
 // Navbar listeners
 $('.flights-btn').on('click', function() {
@@ -46,3 +55,5 @@ $('.miami-text').on('click', function(event) {
     $(document).scrollTop(1);
     $(".arrivingAt").val('Miami');
 });
+
+getLocalStorage();

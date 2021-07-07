@@ -96,7 +96,7 @@ main {
 }
 
 .feature-desc {
-    font-family: cursive;
+    font-family: 'Sriracha', cursive;
     text-decoration-color: white;
 }
 
@@ -264,7 +264,7 @@ main {
 }
 
 .miamiCard{
-    background-color: rgb(52, 216, 74);
+    background-color: #6cd48f;
 }
 
 .imgRound{
@@ -272,7 +272,7 @@ main {
 }
 
 .houstonCard{
-    background-color: rgb(252, 178, 41);
+    background-color: #fac35c;
 }
 
 .footer {
