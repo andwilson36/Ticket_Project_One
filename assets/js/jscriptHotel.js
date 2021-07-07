@@ -5,12 +5,11 @@ function getLocalStorage() {
     $(".party").val(localStorage.getItem('party'));
 }
 
-// Find Hotels Listener
-$('#find-btn').on('click', function(event) {
+$('.hotelButton').on('click', function(event) {
     event.preventDefault();
-    // Takes value from input
+    // Takes value from input, sotres in local storage
     var arriveAt = $(".arrivingAt").val();
-    localStorage.setItem('arrivingAtCity', arriveAt);
+    localStorage.setItem('arrivingAt', arriveAt);
 
     var departDate = $(".departingDate").val();
     localStorage.setItem('departingDate', departDate);
@@ -20,6 +19,8 @@ $('#find-btn').on('click', function(event) {
 
     var partySize = $(".party").val();
     localStorage.setItem('party', partySize);
+
+    window.location.assign('./searchhotel.html');
 });
 
 // Navbar listeners

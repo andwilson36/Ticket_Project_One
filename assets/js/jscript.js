@@ -27,6 +27,8 @@ $('#find-btn').on('click', function(event) {
     window.location.assign('./search.html');
 });
 
+ 
+
 // Navbar listeners
 $('.fights-btn').on('click', function() {
     window.location.assign('./index.html');
