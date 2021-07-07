@@ -1,14 +1,63 @@
-function createTickets() {
+/*
+*   local storage:
+*   arrivingAtHotel = airport user flies to
+*   departingDate = date they leave
+*   returningDate = date they return
+*   party = # of ppl
+*/
+var id;
+var hotel;
+
+
+var findId = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://hotels4.p.rapidapi.com/locations/search?query=" + localStorage.getItem('arrivingAtHotel') + "&locale=en_US",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "c2ce6b3c17msh57d6ee9ec7b2e6ap18a777jsnae6af7525db4",
+		"x-rapidapi-host": "hotels4.p.rapidapi.com"
+	}
+};
+
+$.ajax(findId).done(function (response) {
+	console.log(response);
+    id = response.suggestions[1].entities[1].destinationId;
+    console.log(id);
+    findHotelFromId(id);
+});
+
+function findHotelFromId(id) {
+    var findHotel = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://hotels4.p.rapidapi.com/properties/list?adults1=1&pageNumber=1&destinationId=" + id + "&checkIn=" + localStorage.getItem('departingDate') +"&checkOut=" + localStorage.getItem('returningDate') + "&sortOrder=PRICE&locale=en_US&currency=USD",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-key": "c2ce6b3c17msh57d6ee9ec7b2e6ap18a777jsnae6af7525db4",
+            "x-rapidapi-host": "hotels4.p.rapidapi.com"
+        }
+    };
+    
+    $.ajax(findHotel).done(function (response) {
+        hotel = response;
+        console.log(hotel);
+        createTickets(hotel);
+    });
+}
+
+
+function createTickets(hotel) {
+
     // appends to page
     var columns = $('<div>').addClass('columns');
     var align = $('<div>').addClass('column align');
     var align2 = $('<div>').addClass('column align');
     var align3 = $('<div>').addClass('column align');
     var align4 = $('<div>').addClass('column align');
-    var airlineName = $('<p>').addClass('bd-notification is-info searchBox airName');
+    var hotelName = $('<p>').addClass('bd-notification is-info searchBox hotelName');
     var mobile = $('<div>').addClass('columns is-mobile');
     var mobile2 = $('<div>').addClass('columns is-mobile');
-    var mobile3 = $('<div>').addClass('columns is-mobile');
     var mobile4 = $('<div>').addClass('columns is-mobile');
     var mobile5 = $('<div>').addClass('columns is-mobile');
     var column = $('<div>').addClass('column');
@@ -17,15 +66,13 @@ function createTickets() {
     var destination = $('<p>').addClass('bd-notification is-info searchBox dest');
     var price = $('<p>').addClass('bd-notification is-info searchBox price');
     var leaveDate = $('<p>').addClass('bd-notification is-info searchBox leaveDate');
-    var returnDate = $('<p>').addClass('bd-notification is-info searchBox returnDate');
-    var departingAP = $('<p>').addClass('bd-notification is-info searchBox');
-    var arrivingAP = $('<p>').addClass('bd-notification is-info searchBox');
-    var numOfFlights = 1;
+    var departingHotel = $('<p>').addClass('bd-notification is-info searchBox');
+    var arrivingHotel = $('<p>').addClass('bd-notification is-info searchBox');
+
     // loops through all pulled data
-    for(var i = 0; i < goingDest.Carriers.length; i++) {
         $('#container').append(columns);
         columns.append(align);
-        align.append(airlineName);
+        align.append(hotelName);
         align.append(mobile);
         mobile.append(column);
         column.append(destination);
@@ -36,21 +83,14 @@ function createTickets() {
         align3.append(leaveDate);
         align3.append(mobile4);
         mobile4.append(column2);
-        column2.append(returnDate);
         columns.append(align4);
-        align4.append(departingAP);
+        align4.append(departingHotel);
         align4.append(mobile5);
         mobile5.append(column3);
-        column3.append(arrivingAP);
-        /*
-        *   local storage:
-        *   departFrom = airport user flies out of
-        *   arrivingAt = airport user flies to
-        *   departingDate = date they leave
-        *   returningDate = date they return
-        *   party = # of ppl
-        */
-    }
+        column3.append(arrivingHotel);
+        
+        $('hotelName').text(hotel.data.propertyDescription.name);
+        $('dest').text(hotel.data.propertyDescription.fullAddress);
+        $('price').text(hotel.data.body.roomsAndRates.rooms.ratePlans.price.current);
+        $('arrivingHotel').text(hotel.data.body.guestReviews.tripAdvisor.rating + 'out of ' + hotel.data.body.guestReviews.tripAdvisor.total + ' reviews.');
 }
-
-createTickets();
