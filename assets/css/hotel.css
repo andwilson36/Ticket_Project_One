@@ -2,6 +2,10 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
+nav {
+    background-color: rgb(0, 0, 175);
+}
+
 #navbar-logo {
     padding-top: 0px;
     height: auto;
@@ -21,7 +25,7 @@ body {
 }
 
 .on-img {
-    background-color: rgb(152, 206, 231, .95);
+    background-color: rgba(25, 145, 201, 0.95);
     position: absolute;
     padding-left: 50px;
     padding-right: 50px;
@@ -31,7 +35,7 @@ body {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    border: 2px solid rgb(209, 221, 238);
+    border: 2px solid rgb(174, 185, 201);
     border-radius: 5px;
 }
 
@@ -124,8 +128,8 @@ main {
 
 .la-text {
     color: white;
-    background-color: hsl(171, 100%, 41%, .5);
-    border-color: hsl(171, 100%, 41%, .5);
+    background-color: 	hsl(217, 71%, 53%, .5);
+    border-color: 	hsl(217, 71%, 53%, .5);
     border-radius: 10px;
     padding: 10px;
     font-size: 1.5rem;
@@ -164,8 +168,8 @@ main {
 
 .hou-text {
     color: white;
-    background-color: hsl(217, 71%, 53%, .5);
-    border-color: hsl(217, 71%, 53%, .5);
+    background-color: rgb(252, 178, 41, .5);
+    border-color: rgb(252, 178, 41, .5);
     border-radius: 10px;
     padding: 10px;
     font-size: 1.5rem;
@@ -203,8 +207,8 @@ main {
 
 .miami-text {
     color: white;
-    background-color: hsl(348, 100%, 61%, .5);
-    border-color: hsl(348, 100%, 61%, .5);
+    background-color: rgb(52, 216, 74, .5);
+    border-color: rgb(52, 216, 74, .5);
     border-radius: 10px;
     padding: 10px;
     font-size: 1.5rem;
@@ -242,8 +246,8 @@ main {
 
 .chicago-text {
     color: white;
-    background-color: hsl(48, 100%, 67%, .5);
-    border-color: hsl(48, 100%, 67%, .5);
+    background-color: hsl(348, 100%, 61%, .5);
+    border-color: hsl(348, 100%, 61%, .5);
     border-radius: 10px;
     padding: 10px;
     font-size: 1.5rem;
@@ -256,7 +260,7 @@ main {
 }
 
 .miamiCard{
-    background-color: #69d677
+    background-color: rgb(52, 216, 74);
 }
 
 .imgRound{
@@ -264,7 +268,7 @@ main {
 }
 
 .houstonCard{
-    background-color: orange;
+    background-color: rgb(252, 178, 41);
 }
 
 .footer {
