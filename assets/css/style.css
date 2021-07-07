@@ -96,7 +96,7 @@ main {
 }
 
 .feature-desc {
-    font-family: cursive;
+    font-family: 'Sriracha', cursive;
     text-decoration-color: white;
 }
 
@@ -221,7 +221,12 @@ main {
 .seatle-tile:hover .seatle-caption {
     opacity: 1;
 }
-
+.seatle-tile{
+    background-color: #ffc170;
+}
+.seatle-text-color{
+    text-decoration-color: white;
+}
 .seatle {
     opacity: 1;
     display: block;
@@ -240,6 +245,13 @@ main {
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     text-align: center;
+}
+
+.titleSeatle{
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.125;
 }
 
 .seatle-text {
