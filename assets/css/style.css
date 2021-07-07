@@ -69,6 +69,28 @@ body {
 
 .price {
     margin-top:30px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.leaveDate {
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+.returnDate {
+    margin-left: 90px;
+    margin-right: 90px;
+}
+
+.airName {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.dest {
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 .align {
@@ -92,7 +114,7 @@ main {
 }
 
 .airlines {
-    margin: 50px;
+    margin: 50px 300px;
 }
 
 .feature-desc {

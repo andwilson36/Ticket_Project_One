@@ -42,7 +42,7 @@ function createTickets(goingDest, returningDest) {
     var align2 = $('<div>').addClass('column align');
     var align3 = $('<div>').addClass('column align');
     var align4 = $('<div>').addClass('column align');
-    var airlineName = $('<p>').addClass('bd-notification is-info searchBox');
+    var airlineName = $('<p>').addClass('bd-notification is-info searchBox airName');
     var mobile = $('<div>').addClass('columns is-mobile');
     var mobile2 = $('<div>').addClass('columns is-mobile');
     var mobile3 = $('<div>').addClass('columns is-mobile');
@@ -51,10 +51,10 @@ function createTickets(goingDest, returningDest) {
     var column = $('<div>').addClass('column');
     var column2 = $('<div>').addClass('column');
     var column3 = $('<div>').addClass('column');
-    var destination = $('<p>').addClass('bd-notification is-info searchBox');
+    var destination = $('<p>').addClass('bd-notification is-info searchBox dest');
     var price = $('<p>').addClass('bd-notification is-info searchBox price');
-    var leaveDate = $('<p>').addClass('bd-notification is-info searchBox');
-    var returnDate = $('<p>').addClass('bd-notification is-info searchBox');
+    var leaveDate = $('<p>').addClass('bd-notification is-info searchBox leaveDate');
+    var returnDate = $('<p>').addClass('bd-notification is-info searchBox returnDate');
     var departingAP = $('<p>').addClass('bd-notification is-info searchBox');
     var arrivingAP = $('<p>').addClass('bd-notification is-info searchBox');
     var numOfFlights = 1;
