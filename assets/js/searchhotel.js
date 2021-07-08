@@ -8,6 +8,7 @@
 var id;
 var hotel;
 
+
 var findId = {
 	"async": true,
 	"crossDomain": true,
@@ -30,7 +31,7 @@ function findHotelFromId(id) {
     var findHotel = {
         "async": true,
         "crossDomain": true,
-        "url": "https://hotels4.p.rapidapi.com/properties/get-details?id=" + id + "&checkIn=" + localStorage.getItem('departingDate') +"&checkOut=" + localStorage.getItem('returningDate') + "&currency=USD&locale=en_US&adults1=1",
+        "url": "https://hotels4.p.rapidapi.com/properties/list?adults1=1&pageNumber=1&destinationId=" + id + "&checkIn=" + localStorage.getItem('departingDate') +"&checkOut=" + localStorage.getItem('returningDate') + "&sortOrder=PRICE&locale=en_US&currency=USD",
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "c2ce6b3c17msh57d6ee9ec7b2e6ap18a777jsnae6af7525db4",
@@ -39,12 +40,15 @@ function findHotelFromId(id) {
     };
     
     $.ajax(findHotel).done(function (response) {
-        console.log(response);
-        createTickets(response);
+        hotel = response;
+        console.log(hotel);
+        createTickets(hotel);
     });
 }
 
+
 function createTickets(hotel) {
+
     // appends to page
     var columns = $('<div>').addClass('columns');
     var align = $('<div>').addClass('column align');
