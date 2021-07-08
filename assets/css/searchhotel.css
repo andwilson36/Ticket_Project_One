@@ -6,5 +6,8 @@ main {
     margin-left: 12rem;
     margin-right: 12rem;
     margin-top: 5rem;
-    padding-bottom: 4rem;
+}
+
+.learnMore{
+    display: none;
 }
