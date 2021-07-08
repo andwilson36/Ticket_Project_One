@@ -45,7 +45,6 @@ function findHotelFromId(id) {
 }
 
 function createTickets(hotel) {
-
     // appends to page
     var columns = $('<div>').addClass('columns');
     var align = $('<div>').addClass('column align');
@@ -84,6 +83,7 @@ function createTickets(hotel) {
         align4.append(departingHotel);
         align4.append(mobile5);
         mobile5.append(column3);
+
         column3.append(arrivingHotel);
         
         $('hotelName').text(hotel.data.propertyDescription.name);
@@ -91,3 +91,4 @@ function createTickets(hotel) {
         $('price').text(hotel.data.body.roomsAndRates.rooms.ratePlans.price.current);
         $('arrivingHotel').text(hotel.data.body.guestReviews.tripAdvisor.rating + 'out of ' + hotel.data.body.guestReviews.tripAdvisor.total + ' reviews.');
 }
+
