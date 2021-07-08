@@ -1,4 +1,43 @@
-function createTickets() {
+// makes api
+var api = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/SFO-sky/JFK-sky/07-08-2021?inboundpartialdate=07-09-2021",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-key": "c2ce6b3c17msh57d6ee9ec7b2e6ap18a777jsnae6af7525db4",
+		"x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com"
+	}
+};
+// makes api
+var returnApi = {
+	"async": true,
+	"crossDomain": true,
+    "url": "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsequotes/v1.0/US/USD/en-US/SFO-sky/JFK-sky/07-08-2021?inboundpartialdate=07-09-2021",
+    "method": "GET",
+	"headers": {
+		"x-rapidapi-key": "c2ce6b3c17msh57d6ee9ec7b2e6ap18a777jsnae6af7525db4",
+		"x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com"
+	}
+};
+
+
+// pulls api
+async function pullData(api, returnApi) {
+    var goingDest = await $.ajax(api).done(function (response) {
+        console.log(response);
+        return response;
+    });
+    
+    var returningDest = await $.ajax(returnApi).done(function (response) {
+        console.log(response);
+        return response;
+    });
+
+    createTickets(goingDest, returningDest);
+}
+
+function createTickets(goingDest, returningDest) {
     // appends to page
     var columns = $('<div>').addClass('columns');
     var align = $('<div>').addClass('column align');
@@ -53,4 +92,4 @@ function createTickets() {
     }
 }
 
-createTickets();
+pullData(api, returnApi);
