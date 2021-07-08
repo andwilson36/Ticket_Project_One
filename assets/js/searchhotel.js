@@ -50,7 +50,7 @@ function getHotels(destId) {
     var hotelInfo = {
         "async": true,
         "crossDomain": true,
-        "url": "https://hotels4.p.rapidapi.com/properties/list?adults1=1&pageNumber=1&destinationId=" + destId + "&pageSize=25&checkOut=" + localStorage.getItem('returningDate') +"&checkIn=" + localStorage.getItem('departingDate') + "&sortOrder=PRICE&locale=en_US&currency=USD",
+        "url": "https://hotels4.p.rapidapi.com/properties/list?adults1=1&pageNumber=1&destinationId=" + destId + "&pageSize=6&checkOut=" + localStorage.getItem('returningDate') +"&checkIn=" + localStorage.getItem('departingDate') + "&sortOrder=PRICE&locale=en_US&currency=USD",
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "c2ce6b3c17msh57d6ee9ec7b2e6ap18a777jsnae6af7525db4",
@@ -60,10 +60,12 @@ function getHotels(destId) {
 
     $.ajax(hotelInfo).done(function (response) {
         console.log(response);
+        
         createTickets(response);
     });
 }
 function createTickets(hotel) {
+    $('#loading').hide()
     // appends to page
     var columns = $('<div>').addClass('columns');
     var align = $('<div>').addClass('column align');
@@ -92,19 +94,15 @@ function createTickets(hotel) {
         mobile.append(column);
         column.append(destination);
         columns.append(align2);
-        align2.append(price);
+        align2.append(arrivingHotel);
         align2.append(mobile2);
-        columns.append(align3);
-        align3.append(leaveDate);
-        align3.append(mobile4);
-        mobile4.append(column2);
-        columns.append(align4);
-        align4.append(departingHotel);
-        align4.append(mobile5);
-        mobile5.append(column3);
-        column3.append(arrivingHotel);
-        $('hotelName').text(hotel.data.propertyDescription.name);
-        $('dest').text(hotel.data.propertyDescription.fullAddress);
-        $('price').text(hotel.data.body.roomsAndRates.rooms.ratePlans.price.current);
-        $('arrivingHotel').text(hotel.data.body.guestReviews.tripAdvisor.rating + 'out of ' + hotel.data.body.guestReviews.tripAdvisor.total + ' reviews.');
+        mobile2.append(column3);
+        column3.append(price);
+
+        hotelName.text(hotel.data.body.searchResults.results[0].name);
+        hotelName.css({"font-size": "200%"});
+        destination.text(hotel.data.body.searchResults.results[0].address.streetAddress + ", " + hotel.data.body.searchResults.results[0].address.locality + ", " + hotel.data.body.searchResults.results[0].address.region);
+        destination.css({"font-size": "100%"});
+        price.text(hotel.data.body.searchResults.results[0].ratePlan.price.current + " per night");
+        arrivingHotel.text(hotel.data.body.searchResults.results[0].guestReviews.rating + ' out of ' + hotel.data.body.searchResults.results[0].guestReviews.total + ' reviews');
 }
