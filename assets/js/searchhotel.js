@@ -9,20 +9,19 @@ var id;
 var hotel;
 var destId;
 
-
 var findId = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://hotels4.p.rapidapi.com/locations/search?query=" + localStorage.getItem('arrivingAtHotel') + "&locale=en_US",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "c2ce6b3c17msh57d6ee9ec7b2e6ap18a777jsnae6af7525db4",
-		"x-rapidapi-host": "hotels4.p.rapidapi.com"
-	}
+    "async": true,
+    "crossDomain": true,
+    "url": "https://hotels4.p.rapidapi.com/locations/search?query=" + localStorage.getItem('arrivingAtHotel') + "&locale=en_US",
+    "method": "GET",
+    "headers": {
+        "x-rapidapi-key": "c2ce6b3c17msh57d6ee9ec7b2e6ap18a777jsnae6af7525db4",
+        "x-rapidapi-host": "hotels4.p.rapidapi.com"
+    }
 };
 
 $.ajax(findId).done(function (response) {
-	console.log(response);
+    console.log(response);
     id = response.suggestions[1].entities[1].destinationId;
     console.log(id);
     findDestId(id);
@@ -32,20 +31,14 @@ function findDestId(id) {
     var findDest = {
         "async": true,
         "crossDomain": true,
-        "url": "https://hotels4.p.rapidapi.com/properties/list?adults1=1&pageNumber=1&destinationId=" + id + "&checkIn=" + localStorage.getItem('departingDate') +"&checkOut=" + localStorage.getItem('returningDate') + "&sortOrder=PRICE&locale=en_US&currency=USD",
+        "url": "https://hotels4.p.rapidapi.com/properties/get-details?id=" + id + "&checkIn=" + localStorage.getItem('departingDate') +"&checkOut=" + localStorage.getItem('returningDate') + "&currency=USD&locale=en_US&adults1=1",
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "c2ce6b3c17msh57d6ee9ec7b2e6ap18a777jsnae6af7525db4",
             "x-rapidapi-host": "hotels4.p.rapidapi.com"
         }
     };
-    
-<<<<<<< HEAD
-    $.ajax(findHotel).done(function (response) {
-        hotel = response;
-        console.log(hotel);
-        createTickets(hotel);
-=======
+
     $.ajax(findDest).done(function (response) {
         console.log(response);
         destId = response.data.body.pdpHeader.destinationId;
@@ -68,13 +61,9 @@ function getHotels(destId) {
     $.ajax(hotelInfo).done(function (response) {
         console.log(response);
         createTickets(response);
->>>>>>> c9bd3e971b3c1af5290af443ff7ee00c97274008
     });
 }
-
-
 function createTickets(hotel) {
-
     // appends to page
     var columns = $('<div>').addClass('columns');
     var align = $('<div>').addClass('column align');
