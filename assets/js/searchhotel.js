@@ -68,6 +68,7 @@ function createTickets(hotel) {
     $('#loading').hide()
     // appends to page
     var columns = $('<div>').addClass('columns');
+    var columns2 = $('<div>').addClass('columns');
     var align = $('<div>').addClass('column align');
     var align2 = $('<div>').addClass('column align');
     var align3 = $('<div>').addClass('column align');
@@ -85,6 +86,7 @@ function createTickets(hotel) {
     var leaveDate = $('<p>').addClass('bd-notification is-info searchBox leaveDate');
     var departingHotel = $('<p>').addClass('bd-notification is-info searchBox');
     var arrivingHotel = $('<p>').addClass('bd-notification is-info searchBox');
+    var learnMore = $('<p>').addClass('columns');
 
     // loops through all pulled data
         $('#container').append(columns);
@@ -98,11 +100,13 @@ function createTickets(hotel) {
         align2.append(mobile2);
         mobile2.append(column3);
         column3.append(price);
-
+        $('#container').append(learnMore);
+        
         hotelName.text(hotel.data.body.searchResults.results[0].name);
         hotelName.css({"font-size": "200%"});
         destination.text(hotel.data.body.searchResults.results[0].address.streetAddress + ", " + hotel.data.body.searchResults.results[0].address.locality + ", " + hotel.data.body.searchResults.results[0].address.region);
         destination.css({"font-size": "100%"});
         price.text(hotel.data.body.searchResults.results[0].ratePlan.price.current + " per night");
         arrivingHotel.text(hotel.data.body.searchResults.results[0].guestReviews.rating + ' out of ' + hotel.data.body.searchResults.results[0].guestReviews.total + ' reviews');
-}
+        learnMore.text('Learn More ⇣');
+    }
