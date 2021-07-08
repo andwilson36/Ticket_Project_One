@@ -33,7 +33,7 @@ async function pullData(api, returnApi) {
     });
 
     createTickets(goingDest, returningDest);
-    createTicketsReturn(returningDest, goingDest);
+    //createTicketsReturn(returningDest, goingDest);
 }
 
 function createTickets(goingDest, returningDest) {
@@ -82,12 +82,13 @@ function createTickets(goingDest, returningDest) {
         column3.append(arrivingAP);
        
         //origin to destination
-        departingAP.text(returningDest.Places[1].Name);
-        arrivingAP.text(goingDest.Places[0].Name);
-        destination.text(goingDest.Places[0].CityName);
-        airlineName.text(goingDest.Carriers[i].Name);
-        price.text("$" + goingDest.Quotes[i].MinPrice);
+        departingAP.text("Depart from: " + (returningDest.Places[0].Name));
+        arrivingAP.text("Arrive at: " + (goingDest.Places[1].Name));
+        destination.text((returningDest.Places[0].CityName) + " ⇄ " + (goingDest.Places[1].CityName));
+        airlineName.text((goingDest.Carriers[i].Name) + "/" + (returningDest.Carriers[0].Name));
+        price.text("$" + ((goingDest.Quotes[i].MinPrice)+returningDest.Quotes[0].MinPrice));
         leaveDate.text(goingDest.Quotes[i].OutboundLeg.DepartureDate.replace(/T[\d:]+$/,""));
+        returnDate.text("round-trip")
         /*
         *   local storage:
         *   departFrom = airport user flies out of
@@ -99,73 +100,73 @@ function createTickets(goingDest, returningDest) {
     }
 }
 
-function createTicketsReturn(returningDest, goingDest) {
-    for(var i = 0; i < returningDest.Carriers.length; i++) {
+// function createTicketsReturn(returningDest, goingDest) {
+//     for(var i = 0; i < returningDest.Carriers.length; i++) {
         
-        var columns = $('<div>').addClass('columns');
-        var align = $('<div>').addClass('column align');
-        var align2 = $('<div>').addClass('column align');
-        var align3 = $('<div>').addClass('column align');
-        var align4 = $('<div>').addClass('column align');
-        var airlineName = $('<p>').addClass('bd-notification is-info searchBox airName');
-        var mobile = $('<div>').addClass('columns is-mobile');
-        var mobile2 = $('<div>').addClass('columns is-mobile');
-        var mobile3 = $('<div>').addClass('columns is-mobile');
-        var mobile4 = $('<div>').addClass('columns is-mobile');
-        var mobile5 = $('<div>').addClass('columns is-mobile');
-        var column = $('<div>').addClass('column');
-        var column2 = $('<div>').addClass('column');
-        var column3 = $('<div>').addClass('column');
-        var destination = $('<p>').addClass('bd-notification is-info searchBox dest');
-        var price = $('<p>').addClass('bd-notification is-info searchBox price');
-        var leaveDate = $('<p>').addClass('bd-notification is-info searchBox leaveDate');
-        var returnDate = $('<p>').addClass('bd-notification is-info searchBox returnDate');
-        var departingAP = $('<p>').addClass('bd-notification is-info searchBox');
-        var arrivingAP = $('<p>').addClass('bd-notification is-info searchBox');
-        var numOfFlights = 1;
+//         var columns = $('<div>').addClass('columns');
+//         var align = $('<div>').addClass('column align');
+//         var align2 = $('<div>').addClass('column align');
+//         var align3 = $('<div>').addClass('column align');
+//         var align4 = $('<div>').addClass('column align');
+//         var airlineName = $('<p>').addClass('bd-notification is-info searchBox airName');
+//         var mobile = $('<div>').addClass('columns is-mobile');
+//         var mobile2 = $('<div>').addClass('columns is-mobile');
+//         var mobile3 = $('<div>').addClass('columns is-mobile');
+//         var mobile4 = $('<div>').addClass('columns is-mobile');
+//         var mobile5 = $('<div>').addClass('columns is-mobile');
+//         var column = $('<div>').addClass('column');
+//         var column2 = $('<div>').addClass('column');
+//         var column3 = $('<div>').addClass('column');
+//         var destination = $('<p>').addClass('bd-notification is-info searchBox dest');
+//         var price = $('<p>').addClass('bd-notification is-info searchBox price');
+//         var leaveDate = $('<p>').addClass('bd-notification is-info searchBox leaveDate');
+//         var returnDate = $('<p>').addClass('bd-notification is-info searchBox returnDate');
+//         var departingAP = $('<p>').addClass('bd-notification is-info searchBox');
+//         var arrivingAP = $('<p>').addClass('bd-notification is-info searchBox');
+//         var numOfFlights = 1;
 
-        $('#container').append(columns);
-        columns.append(align);
-        align.append(airlineName);
-        align.append(mobile);
-        mobile.append(column);
-        column.append(destination);
-        columns.append(align2);
-        align2.append(price);
-        align2.append(mobile2);
-        columns.append(align3);
-        align3.append(leaveDate);
-        align3.append(mobile4);
-        mobile4.append(column2);
-        column2.append(returnDate);
-        columns.append(align4);
-        align4.append(departingAP);
-        align4.append(mobile5);
-        mobile5.append(column3);
-        column3.append(arrivingAP);
+//         $('#container').append(columns);
+//         columns.append(align);
+//         align.append(airlineName);
+//         align.append(mobile);
+//         mobile.append(column);
+//         column.append(destination);
+//         columns.append(align2);
+//         align2.append(price);
+//         align2.append(mobile2);
+//         columns.append(align3);
+//         align3.append(leaveDate);
+//         align3.append(mobile4);
+//         mobile4.append(column2);
+//         column2.append(returnDate);
+//         columns.append(align4);
+//         align4.append(departingAP);
+//         align4.append(mobile5);
+//         mobile5.append(column3);
+//         column3.append(arrivingAP);
        
-        //destination to origin
-        arrivingAP.text(returningDest.Places[1].Name);
-        departingAP.text(goingDest.Places[0].Name);
-        destination.text(returningDest.Places[1].CityName);
-        airlineName.text(returningDest.Carriers[i].Name);
-        price.text("$" + returningDest.Quotes[i].MinPrice);
-        leaveDate.text(returningDest.Quotes[i].OutboundLeg.DepartureDate.replace(/T[\d:]+$/,""));
+//         //destination to origin
+//         arrivingAP.text(returningDest.Places[1].Name);
+//         departingAP.text(goingDest.Places[0].Name);
+//         destination.text(returningDest.Places[1].CityName);
+//         airlineName.text(returningDest.Carriers[i].Name);
+//         price.text("$" + returningDest.Quotes[i].MinPrice);
+//         leaveDate.text(returningDest.Quotes[i].OutboundLeg.DepartureDate.replace(/T[\d:]+$/,""));
 
         
 
 
 
         
-        /*
-        *   local storage:
-        *   departFrom = airport user flies out of
-        *   arrivingAt = airport user flies to
-        *   departingDate = date they leave
-        *   returningDate = date they return
-        *   party = # of ppl
-        */
-    }
-}
+//         /*
+//         *   local storage:
+//         *   departFrom = airport user flies out of
+//         *   arrivingAt = airport user flies to
+//         *   departingDate = date they leave
+//         *   returningDate = date they return
+//         *   party = # of ppl
+//         */
+//     }
+// }
 
 pullData(api, returnApi);
