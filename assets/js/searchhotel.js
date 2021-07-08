@@ -60,7 +60,6 @@ function getHotels(destId) {
 
     $.ajax(hotelInfo).done(function (response) {
         console.log(response);
-        
         createTickets(response);
     });
 }
