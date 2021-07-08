@@ -87,7 +87,7 @@ function createTickets(goingDest, returningDest) {
         destination.text((returningDest.Places[0].CityName) + " ⇄ " + (goingDest.Places[1].CityName));
         airlineName.text((goingDest.Carriers[i].Name) + "/" + (returningDest.Carriers[0].Name));
         price.text("$" + ((goingDest.Quotes[i].MinPrice)+returningDest.Quotes[0].MinPrice));
-        leaveDate.text(goingDest.Quotes[i].OutboundLeg.DepartureDate.replace(/T[\d:]+$/,""));
+        leaveDate.text((goingDest.Quotes[i].OutboundLeg.DepartureDate.replace(/T[\d:]+$/,"")) + " → " + (returningDest.Quotes[0].OutboundLeg.DepartureDate.replace(/T[\d:]+$/,"")));
         returnDate.text("round-trip")
         /*
         *   local storage:
