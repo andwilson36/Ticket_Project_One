@@ -87,7 +87,7 @@ function createTickets(goingDest, returningDest) {
         destination.text(goingDest.Places[0].CityName);
         airlineName.text(goingDest.Carriers[i].Name);
         price.text("$" + goingDest.Quotes[i].MinPrice);
-        leaveDate.text(goingDest.Quotes[i].OutboundLeg.DepartureDate);
+        leaveDate.text(goingDest.Quotes[i].OutboundLeg.DepartureDate.replace(/T[\d:]+$/,""));
         /*
         *   local storage:
         *   departFrom = airport user flies out of
@@ -150,7 +150,7 @@ function createTicketsReturn(returningDest, goingDest) {
         destination.text(returningDest.Places[1].CityName);
         airlineName.text(returningDest.Carriers[i].Name);
         price.text("$" + returningDest.Quotes[i].MinPrice);
-        leaveDate.text(returningDest.Quotes[i].OutboundLeg.DepartureDate);
+        leaveDate.text(returningDest.Quotes[i].OutboundLeg.DepartureDate.replace(/T[\d:]+$/,""));
 
         
 
