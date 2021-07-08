@@ -79,6 +79,12 @@ function createTickets(goingDest, returningDest) {
         align4.append(mobile5);
         mobile5.append(column3);
         column3.append(arrivingAP);
+        
+        departingAP.text(goingDest.Places[1].Name);
+        arrivingAP.text(returningDest.Places[0].Name);
+        airlineName.text(goingDest.Carriers[0].Name);
+        destination.text(goingDest.Places[0].CityName);
+        leaveDate.text(goingDest.Quotes)
         /*
         *   local storage:
         *   departFrom = airport user flies out of

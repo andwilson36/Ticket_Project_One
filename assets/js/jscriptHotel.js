@@ -9,7 +9,7 @@ $('.hotelButton').on('click', function(event) {
     event.preventDefault();
     // Takes value from input, sotres in local storage
     var arriveAt = $(".arrivingAt").val();
-    localStorage.setItem('arrivingAt', arriveAt);
+    localStorage.setItem('arrivingAtHotel', arriveAt);
 
     var departDate = $(".departingDate").val();
     localStorage.setItem('departingDate', departDate);
@@ -25,6 +25,16 @@ $('.hotelButton').on('click', function(event) {
 
 // Navbar listeners
 $('.flights-btn').on('click', function() {
+    
+    var departDate = $(".departingDate").val();
+    localStorage.setItem('departingDate', departDate);
+
+    var returnDate = $(".returningDate").val();
+    localStorage.setItem('returningDate', returnDate);  
+    
+    var partySize = $(".party").val();
+    localStorage.setItem('party', partySize);
+    
     window.location.assign('./index.html');
 });
 
