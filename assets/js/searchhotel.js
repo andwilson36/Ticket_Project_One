@@ -10,18 +10,18 @@ var hotel;
 var destId;
 
 var findId = {
-	"async": true,
-	"crossDomain": true,
-	"url": "https://hotels4.p.rapidapi.com/locations/search?query=" + localStorage.getItem('arrivingAtHotel') + "&locale=en_US",
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "c2ce6b3c17msh57d6ee9ec7b2e6ap18a777jsnae6af7525db4",
-		"x-rapidapi-host": "hotels4.p.rapidapi.com"
-	}
+    "async": true,
+    "crossDomain": true,
+    "url": "https://hotels4.p.rapidapi.com/locations/search?query=" + localStorage.getItem('arrivingAtHotel') + "&locale=en_US",
+    "method": "GET",
+    "headers": {
+        "x-rapidapi-key": "c2ce6b3c17msh57d6ee9ec7b2e6ap18a777jsnae6af7525db4",
+        "x-rapidapi-host": "hotels4.p.rapidapi.com"
+    }
 };
 
 $.ajax(findId).done(function (response) {
-	console.log(response);
+    console.log(response);
     id = response.suggestions[1].entities[1].destinationId;
     console.log(id);
     findDestId(id);
@@ -38,7 +38,7 @@ function findDestId(id) {
             "x-rapidapi-host": "hotels4.p.rapidapi.com"
         }
     };
-    
+
     $.ajax(findDest).done(function (response) {
         console.log(response);
         destId = response.data.body.pdpHeader.destinationId;
@@ -63,7 +63,6 @@ function getHotels(destId) {
         createTickets(response);
     });
 }
-
 function createTickets(hotel) {
     // appends to page
     var columns = $('<div>').addClass('columns');
