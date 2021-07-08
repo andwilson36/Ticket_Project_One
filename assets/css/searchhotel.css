@@ -1,3 +1,10 @@
-.Hotels{
-    color: gray;
+main {
+    background-color: rgb(223, 232, 236);
+}
+
+.hotels {
+    margin-left: 12rem;
+    margin-right: 12rem;
+    margin-top: 5rem;
+    padding-bottom: 4rem;
 }
