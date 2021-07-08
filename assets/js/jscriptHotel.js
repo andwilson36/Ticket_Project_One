@@ -9,7 +9,7 @@ $('.hotelButton').on('click', function(event) {
     event.preventDefault();
     // Takes value from input, sotres in local storage
     var arriveAt = $(".arrivingAt").val();
-    localStorage.setItem('arrivingAt', arriveAt);
+    localStorage.setItem('arrivingAtHotel', arriveAt);
 
     var departDate = $(".departingDate").val();
     localStorage.setItem('departingDate', departDate);
