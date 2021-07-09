@@ -64,7 +64,7 @@ function getHotels(destId) {
     });
 }
 function createTickets(hotel) {
-    $('#loading').hide()
+    $('.loading').hide()
     // appends to page
     var columns = $('<div>').addClass('columns');
     var columns2 = $('<div>').addClass('columns');
@@ -86,7 +86,7 @@ function createTickets(hotel) {
     var leaveDate = $('<p>').addClass('bd-notification is-info searchBox leaveDate');
     var departingHotel = $('<p>').addClass('bd-notification is-info searchBox');
     var arrivingHotel = $('<p>').addClass('bd-notification is-info searchBox');
-    var learnMore = $('<p>').addClass('columns is-centered is-narrow');
+    var bookNow = $('<button>').addClass('columns is-centered is-narrow is-success button');
 
     var roomsLeft = $('<p>').addClass('column');
     var neighbourhood = $('<p>').addClass('column');
@@ -95,7 +95,7 @@ function createTickets(hotel) {
     var noCCRequired = $('<li>').addClass('column');
     var welcomeRewards = $('<li>').addClass('column');
     var landmarks = $('<p>').addClass('column');
-    var breakLine = $('<br>');
+    var milesAway = $('<p>').addClass('column');
 
     // loops through all pulled data
         $('#container').append(columns);
@@ -109,16 +109,17 @@ function createTickets(hotel) {
         align2.append(mobile2);
         mobile2.append(column3);
         column3.append(price);
-        $('#container').append(learnMore);
+        $('#container').append(bookNow);
         
-        $('.learnMore').append(columns2);
+        $('.bookNow').append(columns2);
         columns2.append(column4);
 
         column4.append(neighbourhood);
         align3.append(mobile3);
         mobile3.append(column2);
         column2.append(landmarks);
-        columns.append(align3);
+        landmarks.append(columns);
+        columns.append(milesAway);
         align3.append(features);
         features.append(welcomeRewards);
         features.append(freeCancellation);
@@ -136,10 +137,11 @@ function createTickets(hotel) {
         welcomeRewards.text(hotel.data.body.searchResults.results[0].welcomeRewards.collect);
         freeCancellation.text(hotel.data.body.searchResults.results[0].ratePlan.features.freeCancellation);
         noCCRequired.text(hotel.data.body.searchResults.results[0].ratePlan.features.noCCRequired);
-        landmarks.text(hotel.data.body.searchResults.results[0].landmarks[0].label) + breakLine + hotel.data.body.searchResults.results[0].landmarks[0].distance + " away";
+        landmarks.text(hotel.data.body.searchResults.results[0].landmarks[0].label);
+        milesAway.text(hotel.data.body.searchResults.results[0].landmarks[0].distance + " away")
     
-        learnMore.text("Learn More ⇣");
-        // learnMore.on('click', function(event) {
+        bookNow.text("Book Now");
+        // bookNow.on('click', function(event) {
         //     event.preventDefault();
 
         //     roomsleft
