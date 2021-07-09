@@ -1,5 +1,9 @@
-main {
+.columns {
     background-color: rgb(223, 232, 236);
+}
+
+.col4 {
+    background-color: azure;
 }
 
 .hotels {
