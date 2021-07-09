@@ -1,9 +1,20 @@
+body {
+    background-color: white;
+}
+
 .columns {
     background-color: rgb(223, 232, 236);
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.loading {
+    margin-top: 5rem;
+    border-radius: 10px;
 }
 
 .col4 {
-    background-color: azure;
+    background-color: white;
 }
 
 .hotels {
@@ -13,5 +24,12 @@
 }
 
 .learnMore{
+    display: none;
+}
+
+.footer {
+    margin-top: 5rem;
+    background-color: rgb(210, 218, 221);
+    border-top: 2px solid darkgray;
     display: none;
 }

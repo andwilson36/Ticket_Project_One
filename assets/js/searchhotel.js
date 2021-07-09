@@ -5,6 +5,7 @@
 *   returningDate = date they return
 *   party = # of ppl
 */
+
 var id;
 var hotel;
 var destId;
@@ -63,7 +64,12 @@ function getHotels(destId) {
         createTickets(response);
     });
 }
+
 function createTickets(hotel) {
+
+    $('.loading').hide();
+    $('.footer').show();
+
     for(var i = 0; i < 6; i++) {
         
         var columns = $('<div>').addClass('columns');
@@ -85,19 +91,18 @@ function createTickets(hotel) {
         var price = $('<p>').addClass('bd-notification is-info searchBox price');
         var neighbourhood = $('<p>').addClass('bd-notification is-info searchBox neighbourhood');
         var landmarks = $('<p>').addClass('bd-notification is-info searchBox landmarks');
-        var departingAP = $('<p>').addClass('bd-notification is-info searchBox');
-        var breakLine = $('<br/>');
+        var features = $('<p>').addClass('bd-notification is-info searchBox');
         var welRewards = '❌';
         var freeCancel = '❌';
         var noCCReq = '❌';
 
-        if(hotel.data.body.searchResults.results[0].welcomeRewards.collect) {
+        if(hotel.data.body.searchResults.results[i].welcomeRewards.collect) {
             welRewards = '✔️';
         }
-        if(hotel.data.body.searchResults.results[0].ratePlan.features.freeCancellation) {
+        if(hotel.data.body.searchResults.results[i].ratePlan.features.freeCancellation) {
             freeCancel = '✔️';
         }
-        if(hotel.data.body.searchResults.results[0].ratePlan.features.noCCRequired){
+        if(hotel.data.body.searchResults.results[i].ratePlan.features.noCCRequired){
             noCCReq = '✔️';
         }
         
@@ -117,50 +122,24 @@ function createTickets(hotel) {
         mobile4.append(column2);
         column2.append(landmarks);
         columns.append(align4);
-        align4.append(departingAP);
+        align4.append(features);
         align4.append(mobile5);
         mobile5.append(column3);
         
        
         //origin to destination
-        hotelName.text(hotel.data.body.searchResults.results[0].name);
+        hotelName.text(hotel.data.body.searchResults.results[i].name);
         hotelName.css({"font-size": "200%"});
-        destination.text(hotel.data.body.searchResults.results[0].address.streetAddress + ", " + hotel.data.body.searchResults.results[0].address.locality + ", " + hotel.data.body.searchResults.results[0].address.region);         
+        destination.text(hotel.data.body.searchResults.results[i].address.streetAddress + ", " + hotel.data.body.searchResults.results[i].address.locality + ", " + hotel.data.body.searchResults.results[i].address.region);         
         destination.css({"font-size": "100%"});
-        price.text(hotel.data.body.searchResults.results[0].ratePlan.price.current + " per night");
+        price.text(hotel.data.body.searchResults.results[i].ratePlan.price.current + " per night");
+        price.css({"margin-top" : "35px"});
         neighbourhood.text('Neighbourhood: ' + hotel.data.body.searchResults.results[0].neighbourhood);
-        landmarks.text((hotel.data.body.searchResults.results[0].landmarks[0].label) + ' ' + (hotel.data.body.searchResults.results[0].landmarks[0].distance + " away"));
-        departingAP.html('Features:' + "<br/>" + "Welcome Rewards: " + welRewards + "<br/>" + 'Free Cancellation: ' + freeCancel + "<br/>" + 'No CC Required: ' + noCCReq);
+        neighbourhood.css({"margin-top" : "35px"});
+        landmarks.text(hotel.data.body.searchResults.results[i].landmarks[0].label + ' ' + hotel.data.body.searchResults.results[i].landmarks[0].distance + " away");
+        features.html('Features:' + "<br/>" + "Welcome Rewards: " + welRewards + "<br/>" + 'Free Cancellation: ' + freeCancel + "<br/>" + 'No CC Required: ' + noCCReq);
+        features.css({"margin-top" : "35px"});
+
+        columns.css({"margin-bottom": "0px"});
     }
 }
-
-
-//         price.text(hotel.data.body.searchResults.results[0].ratePlan.price.current + " per night");
-//         arrivingHotel.text(hotel.data.body.searchResults.results[0].guestReviews.rating + ' out of ' + hotel.data.body.searchResults.results[0].guestReviews.total + ' reviews');
-        
-//         neighbourhood.text(hotel.data.body.searchResults.results[0].neighbourhood);
-//         welcomeRewards.text(hotel.data.body.searchResults.results[0].welcomeRewards.collect);
-//         freeCancellation.text(hotel.data.body.searchResults.results[0].ratePlan.features.freeCancellation);
-//         noCCRequired.text(hotel.data.body.searchResults.results[0].ratePlan.features.noCCRequired);
-//         landmarks.text(hotel.data.body.searchResults.results[0].landmarks[0].label);
-//         milesAway.text(hotel.data.body.searchResults.results[0].landmarks[0].distance + " away")
-    
-//         bookNow.text("Book Now");
-//         // bookNow.on('click', function(event) {
-//         //     event.preventDefault();
-
-//         //     roomsleft
-//         //     landmarks nearby
-//         //     neighborhoods
-//         //     features (freeCancellation, noCCRequired,paymentPreference)
-//         //     welcomerewards
-            
-
-
-
-
-
-
-            
-//         // });
-// }
