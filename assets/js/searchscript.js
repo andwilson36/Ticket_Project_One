@@ -53,14 +53,16 @@ function createTickets(goingDest, returningDest) {
         var column = $('<div>').addClass('column');
         var column2 = $('<div>').addClass('column');
         var column3 = $('<div>').addClass('column');
+        var column4 = $('<div>').addClass('column col4');
         var destination = $('<p>').addClass('bd-notification is-info searchBox dest');
         var price = $('<p>').addClass('bd-notification is-info searchBox price');
         var leaveDate = $('<p>').addClass('bd-notification is-info searchBox leaveDate');
         var returnDate = $('<p>').addClass('bd-notification is-info searchBox returnDate');
-        var departingAP = $('<p>').addClass('bd-notification is-info searchBox');
+        var departingAP = $('<p>').addClass('bd-notification is-info searchBox depart');
         var arrivingAP = $('<p>').addClass('bd-notification is-info searchBox');
         var numOfFlights = 1;
 
+        $('#container').append(column4);
         $('#container').append(columns);
         columns.append(align);
         align.append(airlineName);
