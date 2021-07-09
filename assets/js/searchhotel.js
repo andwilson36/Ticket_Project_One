@@ -143,3 +143,11 @@ function createTickets(hotel) {
         columns.css({"margin-bottom": "0px"});
     }
 }
+
+$('.hotels-btn').on('click', function() {
+    window.location.assign('./hotel.html');
+});
+
+$('.flights-btn').on('click', function() { 
+    window.location.assign('./index.html');
+});
