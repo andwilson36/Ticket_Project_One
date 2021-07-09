@@ -1,3 +1,28 @@
 main {
     background-color: rgb(223, 232, 236);
+    
+}
+
+.searchBox {
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.airName {
+    margin-top: 35px;
+}
+.price {
+    color: green;
+    margin-top: 60px
+}
+
+.leaveDate {
+    margin-top: 30px;
+}
+
+.depart {
+    margin-top: 30px;
+}
+.col4 {
+    background-color: white;
 }
