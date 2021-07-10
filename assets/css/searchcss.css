@@ -3,6 +3,22 @@ main {
     
 }
 
+#container{
+    background-color: white;
+}
+
+.columns {
+    background-color: #53b4e0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.loading {
+    margin-top: 15rem;
+}
+
 .searchBox {
     border-radius: 5px;
     font-weight: bold;
