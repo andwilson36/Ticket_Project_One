@@ -3,13 +3,15 @@ body {
 }
 
 .columns {
-    background-color: rgb(223, 232, 236);
+    background-color: #4879c7;
     margin-top: 0px;
     margin-bottom: 0px;
+    border-radius: 10px;
+    font-size: 1.2rem;
 }
 
 .loading {
-    margin-top: 5rem;
+    margin-top: 15rem;
     border-radius: 10px;
 }
 
@@ -17,10 +19,23 @@ body {
     background-color: white;
 }
 
+.searchBox {
+    border-radius: 5px;
+    font-weight: bold;
+}
+
 .hotels {
     margin-left: 12rem;
     margin-right: 12rem;
     margin-top: 5rem;
+}
+
+.price {
+    color: green;
+}
+
+#container{
+    background-color: white;
 }
 
 .learnMore{

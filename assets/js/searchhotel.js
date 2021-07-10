@@ -129,9 +129,8 @@ function createTickets(hotel) {
        
         //origin to destination
         hotelName.text(hotel.data.body.searchResults.results[i].name);
-        hotelName.css({"font-size": "200%"});
+        hotelName.css({"font-size": "120%"});
         destination.text(hotel.data.body.searchResults.results[i].address.streetAddress + ", " + hotel.data.body.searchResults.results[i].address.locality + ", " + hotel.data.body.searchResults.results[i].address.region);         
-        destination.css({"font-size": "100%"});
         price.text(hotel.data.body.searchResults.results[i].ratePlan.price.current + " per night");
         price.css({"margin-top" : "35px"});
         neighbourhood.text('Neighbourhood: ' + hotel.data.body.searchResults.results[0].neighbourhood);
