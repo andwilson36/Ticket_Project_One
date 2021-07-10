@@ -37,6 +37,7 @@ async function pullData(api, returnApi) {
 }
 
 function createTickets(goingDest, returningDest) {
+    $('.loading').hide();
     for(var i = 0; i < goingDest.Carriers.length; i++) {
         
         var columns = $('<div>').addClass('columns');
@@ -90,7 +91,7 @@ function createTickets(goingDest, returningDest) {
         airlineName.text((goingDest.Carriers[i].Name) + "/" + (returningDest.Carriers[0].Name));
         price.text("$" + ((goingDest.Quotes[i].MinPrice)+returningDest.Quotes[0].MinPrice));
         leaveDate.text((goingDest.Quotes[i].OutboundLeg.DepartureDate.replace(/T[\d:]+$/,"")) + " → " + (returningDest.Quotes[0].OutboundLeg.DepartureDate.replace(/T[\d:]+$/,"")));
-        returnDate.text("round-trip")
+        returnDate.text("Round-Trip");
        
     }
 }
