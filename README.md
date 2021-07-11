@@ -1,1 +1,2 @@
 # Ticket
+Ticket is a website with the goal of providing the user with the best hotels and the best priced flights to wherever in the world they choose. Using APIs we have gather the information that the user wants presents the with several choices. Ticket provides the flights to where the user picks by showing them the airline there and back, price, and what airports they will be going to. Ticket shows hotel choices by providing the name, street address, price per night, and rewards they will receive for staying there and more.
