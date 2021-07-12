@@ -9,5 +9,5 @@ Ticket was built using HTML5, CSS, and JavaScript. With the combined used of the
 This project was built by Andrew, Erin and Joris for a coding assignment. We are very pleased with how it came out; however, due to time constraints features were left out. Additional features that could be included if time allowed include: warnings when traveling to areas with high cases of COVID-19, filters when viewing hotels in the area, and the creation of additional pages where you can learn more about the project and their creators. 
 
 ## Come Visit Us!
-You can reach Ticket through the following URL: 
+You can reach Ticket through the following URL: https://andwilson36.github.io/Ticket_Project_One/
 
