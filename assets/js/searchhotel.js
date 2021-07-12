@@ -5,11 +5,11 @@
 *   returningDate = date they return
 *   party = # of ppl
 */
-
+// variables
 var id;
 var hotel;
 var destId;
-
+// api call to get the id of place searched
 var findId = {
     "async": true,
     "crossDomain": true,
@@ -27,7 +27,7 @@ $.ajax(findId).done(function (response) {
     console.log(id);
     findDestId(id);
 });
-
+// api call to get the destID
 function findDestId(id) {
     var findDest = {
         "async": true,
@@ -46,7 +46,7 @@ function findDestId(id) {
         getHotels(destId);
     });
 }
-
+// api call that useses destID to get info
 function getHotels(destId) {
     var hotelInfo = {
         "async": true,
@@ -64,14 +64,14 @@ function getHotels(destId) {
         createTickets(response);
     });
 }
-
+// function that creates DOM
 function createTickets(hotel) {
-
+    // hides loading bar and makes footer appear after loading
     $('.loading').hide();
     $('.footer').show();
-
+    // for loop to only get 6 results
     for(var i = 0; i < 6; i++) {
-        
+        // creates elements of tickets
         var columns = $('<div>').addClass('columns');
         var align = $('<div>').addClass('column align');
         var align2 = $('<div>').addClass('column align');
@@ -82,7 +82,6 @@ function createTickets(hotel) {
         var mobile2 = $('<div>').addClass('columns is-mobile');
         var mobile3 = $('<div>').addClass('columns is-mobile');
         var mobile4 = $('<div>').addClass('columns is-mobile');
-        var mobile5 = $('<div>').addClass('columns is-mobile');
         var column = $('<div>').addClass('column');
         var column2 = $('<div>').addClass('column');
         var column3 = $('<div>').addClass('column');
@@ -105,7 +104,7 @@ function createTickets(hotel) {
         if(hotel.data.body.searchResults.results[i].ratePlan.features.noCCRequired){
             noCCReq = '✔️';
         }
-        
+        // creates ticket
         $('#container').append(column4);
         $('#container').append(columns);
         columns.append(align);
@@ -118,15 +117,13 @@ function createTickets(hotel) {
         align2.append(mobile2);
         columns.append(align3);
         align3.append(neighbourhood);
-        align3.append(mobile4);
-        mobile4.append(column2);
+        align3.append(mobile3);
+        mobile3.append(column2);
         column2.append(landmarks);
         columns.append(align4);
         align4.append(features);
-        align4.append(mobile5);
-        mobile5.append(column3);
-        
-       
+        align4.append(mobile4);
+        mobile4.append(column3);
         //origin to destination
         hotelName.text(hotel.data.body.searchResults.results[i].name);
         hotelName.css({"font-size": "120%"});
@@ -142,11 +139,10 @@ function createTickets(hotel) {
         columns.css({"margin-bottom": "0px"});
     }
 }
-
+// navbar buttons
 $('.hotels-btn').on('click', function() {
     window.location.assign('./hotel.html');
 });
-
 $('.flights-btn').on('click', function() { 
     window.location.assign('./index.html');
 });

@@ -4,7 +4,7 @@ function getLocalStorage() {
     $(".returningDate").val(localStorage.getItem('returningDate'));
     $(".party").val(localStorage.getItem('party'));
 }
-
+// when user clicks on find hotels btn
 $('.hotelButton').on('click', function(event) {
     event.preventDefault();
     // Takes value from input, sotres in local storage
@@ -19,13 +19,12 @@ $('.hotelButton').on('click', function(event) {
 
     var partySize = $(".party").val();
     localStorage.setItem('party', partySize);
-
+    // sends user to the hotel results page
     window.location.assign('./searchhotel.html');
 });
-
 // Navbar listeners
 $('.flights-btn').on('click', function() {
-    
+    // saves dates and # of ppl to local storage
     var departDate = $(".departingDate").val();
     localStorage.setItem('departingDate', departDate);
 
@@ -34,11 +33,11 @@ $('.flights-btn').on('click', function() {
     
     var partySize = $(".party").val();
     localStorage.setItem('party', partySize);
-    
+    // sends user to index.html
     window.location.assign('./index.html');
 });
-
 // Book listeners
+// scrolls to top of page with featured place they clicked on as the value for the arriving place
 $('.la-text').on('click', function(event) {
     event.preventDefault();
 
@@ -66,5 +65,5 @@ $('.miami-text').on('click', function(event) {
     $(document).scrollTop(1);
     $(".arrivingAt").val('Miami');
 });
-
+// gets local storage when page loads
 getLocalStorage();
